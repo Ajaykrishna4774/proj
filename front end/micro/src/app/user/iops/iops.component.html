@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <meta charset="utf-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+ 
+  body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+
+
+
+    background-image: url("https://wallpaperhd.wiki/wp-content/uploads/hd-backgrounds-websites-hd-pics-photos-beautiful-attractive-web-water-drops-nature-hd-quality-desktop-background-wallpaper-750x430.jpg");
+
+
+
+    background-repeat: no-repeat;
+
+
+
+    background-size: cover;
+
+  }
+
+
+
+  * {
+
+    box-sizing: border-box;
+
+  }
+
+</style>
+
+
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  
+
+<div class="container">
+<br><br><br><br>
+<div class="panel panel-default">
+  <h2 style="text-align:center">Ipo Details</h2>
+     <div class="panel-body">
+     
+        <table  class="table table-hover table-sm" >
+        <thead>
+            <tr>  
+               
+                <th>ipoid</th>  
+                <th>companyname</th>  
+                <th>stockexchange</th>  
+                <th>pricepershare</th>  
+                <th>totalnoofshares</th>  
+                <th>opendatetime</th>  
+                  
+            </tr>  
+        </thead>
+        <tbody>  
+            <tr *ngFor="let user of iposList ">  
+               <td>{{user.ipoid}}</td>  
+               <td>{{user.companyname}}</td>  
+               <td>{{user.stockexchange}}</td>  
+               <td>{{user.pricepershare}}</td>  
+               <td>{{user.totalnoofshares}}</td>  
+               <td>{{user.opendatetime}}</td> 
+               <td><button (click)="updateIpos(user)" class="btn btn-primary">Update</button> </td>
+
+               <td><button (click)="deleteIpos(user)" class="btn btn-danger">Delete</button> </td>
+           
+             </tr>   
+       </tbody><br>  
+    </table>
+    &nbsp;&nbsp;&nbsp;
+      <button type="button" class="btn btn-primary" class="text-align:center">
+        <a routerLink="/addipo"> AddIpos</a>
+      </button>
+      &nbsp;&nbsp;&nbsp;
+      <button type="button" class="btn btn-primary" class="text-align:center"><a routerLink='/admin'>Back</a></button>
+
+    </div>
+    </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </body></html>
+    

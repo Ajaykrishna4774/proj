@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-image: url("https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="row">
+		<div class="col-lg-4 col-sm-4"></div>
+		<div class="col-lg-4">
+			<div class="signup-form">
+
+				<div [hidden]="submitted" style="width: 400px;">
+
+					<form [formGroup]="usersaveform" #saveUser1 (ngSubmit)="saveUser(saveUser1)">
+						<div>
+							<h2>Sign Up</h2>
+
+							<p>Please fill in this form to create an account!</p>
+
+						</div>
+
+
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+
+								<input type="text" class="form-control" formControlName="firstname"
+									placeholder="firstname" required="required">
+								<div class="alert alert-danger" *ngIf="(FirstName.touched) && (FirstName.invalid)"
+									style="margin-top: 5px;">
+
+									<span *ngIf="FirstName.errors.required">Password is Required</span>
+
+									<span *ngIf="FirstName.errors.minlength">
+
+										MinLength 4 letters
+
+									</span>
+
+								</div>
+
+
+							</div>
+
+						</div>
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+
+								<input type="text" class="form-control" formControlName="lastname"
+									placeholder="lastname" required="required">
+
+								<div class="alert alert-danger" *ngIf="(LastName.touched)&&(LastName.invalid)"
+									style="margin-top: 5px;">
+
+									<span *ngIf="LastName.errors.required">lastname is Required</span>
+									<span *ngIf="LastName.errors.minlength">
+
+										MinLength 4 letters
+
+									</span>
+								</div>
+
+							</div>
+
+						</div>
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+
+								<input type="email" class="form-control" formControlName="email"
+									placeholder="Email Address" required="required">
+
+								<div class="alert alert-danger" *ngIf="(Email.touched) && (Email.invalid)"
+									style="margin-top: 5px;">
+
+									<span *ngIf="Email.errors.required">User Email is Required</span>
+
+									<span *ngIf="Email.errors.email">
+
+										Invalid Email Format
+
+									</span>
+
+								</div>
+
+							</div>
+
+						</div>
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+
+								<input type="text" class="form-control" formControlName="gender" placeholder="Gender"
+									required="required">
+
+								<div class="alert alert-danger" *ngIf="(Gender.touched)&&(Gender.invalid)"
+									style="margin-top: 5px;">
+
+									<span *ngIf="Gender.errors.required">gender is Required</span>
+
+								</div>
+
+							</div>
+
+						</div>
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+
+								<input type="text" class="form-control" formControlName="address" placeholder=" address"
+									required="required">
+
+								<div class="alert alert-danger" *ngIf="(Address.touched)&&(Address.invalid)"
+									style="margin-top: 5px;">
+
+									<span *ngIf="Address.errors.required">Address is Required</span>
+
+								</div>
+
+							</div>
+
+						</div>
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+
+								<input type="tel" class="form-control" formControlName="mobileno" placeholder="phone"
+									required="required">
+
+								<div class="alert alert-danger" *ngIf="(Mobileno.touched)&& (Mobileno.invalid) "
+									style="margin-top: 5px;">
+
+									<span *ngIf="Mobileno.errors.required">Phone is Required</span>
+
+								</div>
+
+							</div>
+
+						</div>
+
+
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+
+								<input type="text" class="form-control" formControlName="username"
+									placeholder="Username" required="required">
+
+								<div class="alert alert-danger" *ngIf="(UserName.touched) && (UserName.invalid)"
+									style="margin-top: 5px;">
+
+									<span *ngIf="UserName.errors.required">UserName is Required</span>
+
+									<span *ngIf="UserName.errors.minlength">
+
+										MinLength Error
+
+									</span>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="form-group">
+
+							<div class="input-group">
+
+								<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+
+								<input type="password" class="form-control" formControlName="password"
+									placeholder="Password" required="required">
+
+								<div class="alert alert-danger" *ngIf="(Password.touched) && (Password.invalid)"
+									style="margin-top: 5px;">
+
+									<span *ngIf="Password.errors.required">Password is Required</span>
+
+									<span *ngIf="Password.errors.minlength">
+
+										MinLength Error
+
+									</span>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="form-group">
+
+
+
+							<div class="input-group">
+
+
+
+								<input type="file" class="form-control" formControlName="profileimage"
+									placeholder="ProfileImage" required="required" (change)="selectFile($event)">
+
+
+
+							</div>
+
+
+
+						</div>
+
+
+
+						<div class="form-group">
+
+							<label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <a
+									href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+
+						</div>
+
+
+
+						<button type="submit" class="btn btn-primary btn-lg" [disabled]=!usersaveform.valid>Sign
+							Up</button>
+
+
+
+
+
+					</form>
+
+					<div class="text-center">Already have an account? <a href="#">Login here</a></div>
+
+				</div>
+
+			</div>
+
+			<div [hidden]="!submitted">
+
+				<h4>User Added SuccessFully!</h4>
+
+				<button (click)="usersaveform()"></button>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

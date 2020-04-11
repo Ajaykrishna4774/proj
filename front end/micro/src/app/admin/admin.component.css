@@ -1,0 +1,11 @@
+.bg-img {
+    color: #fff;
+    background-image: url("https://www.kiplinger.com/slideshow/investing/T019-S003-5-signs-to-watch-for-a-stock-market-peak/images/intro.jpg");
+background-repeat: no-repeat;
+    background-size: 1400 px 700px;
+}
+.container{
+		width: 390px;
+		margin: 0 auto;
+		padding: 100px 0;
+}
